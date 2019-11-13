@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net461;</TargetFrameworks>
+    <LangVersion>default</LangVersion>
+    <ApplicationIcon />
+    <OutputType>WinExe</OutputType>
+    <StartupObject />
+    <Configurations>Release</Configurations>
+	<DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>../bin</OutputPath>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<PlatformTarget>x86</PlatformTarget>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="GameLib">
+      <HintPath>..\bin\GameLib.dll</HintPath>
+    </Reference>
+    <Reference Include="GameLib.SPF">
+      <HintPath>..\bin\GameLib.SPF.dll</HintPath>
+    </Reference>
+    <Reference Include="SPFSharp">
+      <HintPath>..\bin\SPFSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  
+</Project>
