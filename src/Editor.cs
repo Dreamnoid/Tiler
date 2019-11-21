@@ -9,7 +9,6 @@ namespace Tiler
 
         private static IMGUI UI = new IMGUI(new SPFPlatform()) {Font = Game.Font};
 
-        private int _tileSize = 16;
         private Color _currentColor = Color.Black;
         private int _pixelSize = 12;
 
@@ -62,10 +61,10 @@ namespace Tiler
                     for (int tx = 0; tx < 3; ++tx)
                     {
                         DrawImage(
-                            new Point(previewGroup.X + (tx * _tileSize), previewGroup.Y + (ty * _tileSize)));
+                            new Point(previewGroup.X + (tx * _image.Width), previewGroup.Y + (ty * _image.Height)));
 
                         DrawImage(
-                            new Point(previewGroup.X + (3 * _tileSize) + 4 + (tx * _tileSize * 2), previewGroup.Y + (ty * _tileSize * 2)),
+                            new Point(previewGroup.X + (3 * _image.Width) + 4 + (tx * _image.Width * 2), previewGroup.Y + (ty * _image.Height * 2)),
                             2);
                     }
                 }
@@ -74,8 +73,8 @@ namespace Tiler
             var editorGroup = UI.ToolGroup(layout, "Editor");
             {
                 var rect = new Rectangle(editorGroup.X, editorGroup.Y,
-                    3 * _tileSize * _pixelSize,
-                    3 * _tileSize * _pixelSize);
+                    3 * _image.Width * _pixelSize,
+                    3 * _image.Height * _pixelSize);
                 if (rect.Contains(UI.Platform.MousePosition))
                 {
                     var px = ((UI.Platform.MousePosition.X - rect.X) / _pixelSize) % _image.Width;
@@ -105,14 +104,14 @@ namespace Tiler
                         {
                             DrawImage(
                                 new Point(
-                                    rect.X + (tx * _tileSize * _pixelSize),
-                                    rect.Y + (ty * _tileSize * _pixelSize)),
+                                    rect.X + (tx * _image.Width * _pixelSize),
+                                    rect.Y + (ty * _image.Height * _pixelSize)),
                                 _pixelSize);
                             Platform.DrawRectangle(new Rectangle(
-                                rect.X + (tx * _tileSize * _pixelSize),
-                                rect.Y + (ty * _tileSize * _pixelSize),
-                                _tileSize * _pixelSize,
-                                _tileSize * _pixelSize), new Color(0, 0, 0, 0.2f));
+                                rect.X + (tx * _image.Width * _pixelSize),
+                                rect.Y + (ty * _image.Height * _pixelSize),
+								_image.Width * _pixelSize,
+								_image.Height * _pixelSize), new Color(0, 0, 0, 0.2f));
                         }
                     }
                     Platform.DrawRectangle(rect, Color.Black);
