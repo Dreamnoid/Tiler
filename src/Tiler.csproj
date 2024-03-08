@@ -16,15 +16,22 @@
     <Optimize>false</Optimize>
   </PropertyGroup>
 
+
   <ItemGroup>
-    <Reference Include="GameLib">
-      <HintPath>..\bin\GameLib.dll</HintPath>
+    <Reference Include="Dream.Core">
+      <HintPath>..\..\..\SDK\Dream\bin\Dream.Core.dll</HintPath>
     </Reference>
-    <Reference Include="GameLib.SPF">
-      <HintPath>..\bin\GameLib.SPF.dll</HintPath>
+    <Reference Include="Dream.SPF">
+      <HintPath>..\..\..\SDK\Dream\bin\Dream.SPF.dll</HintPath>
     </Reference>
+	  <Reference Include="Dream.Editor">
+		  <HintPath>..\..\..\SDK\Dream\bin\Dream.Editor.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Dream.Drawing">
+		  <HintPath>..\..\..\SDK\Dream\bin\Dream.Drawing.dll</HintPath>
+	  </Reference>
     <Reference Include="SPFSharp">
-      <HintPath>..\bin\SPFSharp.dll</HintPath>
+      <HintPath>..\..\..\SDK\SPF\bin\SPFSharp.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
